@@ -17,10 +17,20 @@ import java.util.Arrays;
 
 public class Facebook_1 {
 
+    /**
+     * Emulates binary random generator
+     * @return 0 or 1
+     */
     public static int binRandom(){
         return Math.random() < 0.5 ? 0 : 1;
     }
 
+    /**
+     * Returns random number from the interval [0, n]
+     * Based on the binRandom()
+     * @param n
+     * @return
+     */
     public static int nRandom(int n){
         int result = 0;
         while(--n >= 0)
@@ -28,12 +38,22 @@ public class Facebook_1 {
         return result;
     }
 
+    /**
+     * Exchange i-th and j-th entries into array a
+     * @param a - input array
+     * @param i - index to exchange with
+     * @param j - index to exchange with
+     */
     public static void exch(int [] a, int i, int j){
         int t = a[i];
         a[i] = a[j];
         a[j] = t;
     }
 
+    /**
+     * Shuffling array a
+     * @param a
+     */
     public static void shuffle(int [] a){
         for(int i = 0; i < a.length; i++)
             exch(a, i, nRandom(i));
